@@ -1,0 +1,409 @@
+//VARIABLES // main color themes
+$color-main: #637A8F;
+$color-light: #BFCBD6;
+$color-main2: #8C6E6C;
+$color-light2: #D5BFBE;
+$color-bonus: #D3D6A9;
+$text-color-main: #283639;
+
+
+//Imported font
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+
+
+//MIXIN THEMES
+@mixin bodytheme ($theme: #637A8F) {
+    background: $theme;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 1000px;
+    h1, h2, h3 {
+        color: white;
+        font-weight: bold;
+    } 
+    p   {
+        color: $text-color-main;
+        }
+    }
+
+@mixin bodytheme2 ($theme: #8C6E6C) {
+    background: $theme;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 1000px;
+    h1, h2, h3 {
+        color: white;
+        font-weight: bold;
+    }
+    p {
+        color: $text-color-main;
+    }
+}
+
+@mixin footertheme ($theme: #8C6E6C){
+    background-color: $theme;
+    position: relative;
+    bottom: 0;
+    max-height: 180px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    img:hover {
+        -webkit-filter: invert(100%) !important;
+    }
+}
+
+
+
+
+
+//Navbar adjustments and styling
+.navbar {
+    z-index: 5;
+    padding: 0;
+    .navbar-expand-lg {
+        max-height: 100px;
+        opacity: 0;
+    }
+    .navbar-toggler, .navbar-toggler collapsed {
+        right: 1px;
+        top: 2px;
+        border-color: $color-main;
+    }
+    .navbar-toggler:focus{
+        box-shadow: none;
+        background-color: $color-main;
+
+    }
+    .navbar-brand {
+        padding: 0;
+        font-weight: bold;
+        color: white;
+        font-size: 40px;
+        position: relative;
+        padding-right: 0;
+    }
+    .navbar-brand:hover span {
+        display:none;
+    }
+    .navbar-brand:hover:before {
+        font-size: 34px;
+        padding-bottom: 5px;
+        content:"h o m e";
+    }
+    .container-fluid {
+        background-color: $color-main;
+    }
+    .navbar-light {
+        color: white;
+    }
+    .nav-item {
+        width: 100px;
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+        .nav-link {
+            color: $color-light2;
+            padding:0;
+        }
+    }
+    .nav-item:nth-child(1):hover span {
+        display:none;
+    }
+    .nav-item:nth-child(1) > a:hover:before{
+        content: "アバウト";
+        font-weight: bold;
+    }
+    .nav-item:nth-child(2):hover span {
+        display:none;
+    }
+    .nav-item:nth-child(2) > a:hover:before {
+        content: "プロジェック";
+        font-weight: bold;
+    }
+    .nav-item:nth-child(3):hover span {
+        display:none;
+    }
+    .nav-item:nth-child(3) >a:hover:before {
+        content: "リンクス";
+        font-weight: bold;
+    }
+    .nav-item:nth-child(4):hover span {
+        display:none;
+    }
+    .nav-item:nth-child(4) >a:hover:before {
+        content: "カラー";
+        font-weight: bold;
+    }
+
+}
+
+body {
+    @include bodytheme;
+} 
+
+
+//Body theme red
+.bodytheme2 {
+    background-color: $color-main2;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 1000px;
+    h1, h2, h3 {
+        color: white;
+        font-weight: bold;
+    }
+    p {
+        color: $text-color-main;
+    }
+    .container-fluid {
+        background-color: $color-main2;
+    }
+    .navbar-toggler, .navbar-toggler collapsed {
+        right: 1px;
+        top: 2px;
+        border-color: $color-main2;
+    }
+    .navbar-toggler:focus{
+        box-shadow: none;
+        background-color: $color-main2;
+
+    }
+    .accordion {
+        .accordion-item {
+            background-color: $color-main2;
+            border: none;
+        }
+        .accordion-button {
+            background-color:  $color-main2;
+            font-weight: bold;
+            font-size: 0.6em;
+            color:  $color-light;
+        }
+        .accordion-button:focus {
+            border-color: none;
+            box-shadow: none;
+        }
+        .accordion-collapse {
+            background-color: $color-main2;
+        }
+    }
+}
+
+//Header for image
+header {
+    #omakuva {
+        display: block;
+        text-align: center;
+        img:hover {
+            -webkit-filter: invert(90%) !important;
+        }
+}
+}
+
+//"Main" element with all its page variation containers
+main {
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 800px;
+    h1 {
+        padding: 10px;
+        margin: auto;
+        display: flex;
+    }
+    h1:hover {
+        color: white;
+    }
+    .container {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0;
+        }
+    
+    //Mainpage image carousel
+    .carousel-container {
+        .row {
+            padding: 40px;
+        }
+        .carouselsize{
+            width: 100%;
+            display: inline-block;
+        }
+        .carousel {
+            width: 100%;
+            .carousel-item {
+                width: 100%;
+                padding: 0;
+                object-fit:fill;
+            }
+        }
+        }
+
+    .text-container {
+        margin-top: 20px;
+        padding: 10px;
+        margin: auto;
+        width: 90%;
+        flex: auto;
+        [class*="col"]{
+            padding: 10px;
+        }
+    }
+
+    //links page adjustments
+    #spotifylogo, #linksimg {
+        margin-left: 5%;
+        padding: 10px;
+        max-width: 210px;
+        -webkit-filter: invert(100%) !important;
+    }
+
+    
+    .playlist-container {
+        margin-top: 20px;
+        margin: auto;
+        width: 80%;
+        flex: auto;
+    }
+
+    .links {
+        h2 {
+            font-size: 2vw;
+        }
+        .col-sm-12, .col-md-12 {
+            padding: 20px;
+    }
+
+  //project page main container 
+    .projects {
+        margin-top: 20px;
+        padding: 10px;
+        margin: auto;
+        width: 90%;
+        flex: auto;
+
+    }
+
+    }
+}
+
+
+//About page bootstrap accordion
+.accordion {
+    margin: auto;
+    .accordion-item {
+        background-color: $color-main;
+        border: none;
+    }
+    .accordion-button {
+        background-color:  $color-main;
+        font-weight: bold;
+        font-size: 0.6em;
+        color:  $color-light;
+    }
+    .accordion-button:focus {
+        border-color: none;
+        box-shadow: none;
+    }
+    .accordion-collapse {
+        background-color: $color-main;
+    }
+
+}
+
+#accordionExample {
+    width: 100%;
+}
+
+
+
+
+//javascript function styles
+.aboutmestyle {
+    background-color: $color-light;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.aboutmestyle2 {
+    background-color: $color-light2;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+
+//Footer element
+#container-footer {
+    @include footertheme;
+}
+
+//projects page adjustments
+
+.embedwindow{
+    text-align: center;
+    iframe {
+        top: 0;
+        width: 60vw;
+        height: 500px;
+        -webkit-transform:scale(0.95);
+
+    }
+}
+
+#restapiviewer {
+    text-align: left;
+    img {
+        max-width: 400px;
+    }
+}
+
+//Responsivity adjustments
+
+@media only screen and (max-width: 991px){
+    main {
+    .carousel-container {
+        .row {
+            padding: 0;
+        }
+    }
+    .links {
+        h2 {
+            font-size: 18px;
+        }
+    }
+    }
+    .navbar {
+        .nav-item {
+            text-align: right;
+            width: auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+    }
+    }
+    .embedwindow{
+        right: 50;
+        iframe {
+            text-align: left;
+    
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 700px) {
+    header {
+        visibility: hidden;
+        display: none;
+    }
+    .embedwindow{
+        iframe {
+            display: none;
+    
+        }
+    }
+    #restapiviewer {
+        text-align: center;
+        img {
+            max-width: 80vw;
+        }
+    }
+}
